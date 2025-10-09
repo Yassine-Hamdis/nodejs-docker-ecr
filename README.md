@@ -17,3 +17,13 @@ In this lesson we worked with Mongo and Docker
     - ```docker build -t app .```
 - And pushed it to nexus by adding the nexus register to my docker engine
 - ![img_2.png](img_2.png)
+
+
+
+########################### after creating ecr aws repository #####################
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 360121240785.dkr.ecr.us-east-1.amazonaws.com
+docker build -t my-app:1.0 .  
+docker tag my-app:1.0 360121240785.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0   
+docker push 360121240785.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0        
+docker-compose -f docker-compose.yaml up 

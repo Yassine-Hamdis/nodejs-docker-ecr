@@ -1,11 +1,11 @@
 version: '3'
-test & test 2
-test1
+# test & test 2
+# test1
 services:
-  # my-app:
-  # image: ${docker-registry}/my-app:1.0
-  # ports:
-  # - 3000:3000
+  my-app:
+    image: 360121240785.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0
+    ports:
+      - 3000:3000
   mongodb:
     image: mongo
     ports:
@@ -19,11 +19,13 @@ services:
     image: mongo-express
     restart: always
     ports:
-      - 8080:8081
+      - 8081:8081
     environment:
       - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
+      - ME_CONFIG_BASICAUTH_USERNAME=admin
+      - ME_CONFIG_BASICAUTH_PASSWORD=password
     depends_on:
       - "mongodb"
 volumes:
