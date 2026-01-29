@@ -23,4 +23,4 @@ In this lesson we worked with Mongo and Docker
 - docker build -t my-app:1.0 .  
 - docker tag my-app:1.0 360121240785.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0   
 - docker push 360121240785.dkr.ecr.us-east-1.amazonaws.com/my-app:1.0        
-docker-compose -f docker-compose.yaml up 
+- docker-compose -f docker-compose.yaml up 
